@@ -6,10 +6,11 @@ Application web full-stack pour gérer ses finances personnelles. Agrège les co
 
 Frontend et API tournent dans le **même projet** — un seul serveur à lancer.
 
-<img width="1918" height="959" alt="Screenshot from 2026-06-09 00-09-50" src="https://github.com/user-attachments/assets/45ed36ba-9dd0-432f-9665-d616f52c3d1d" />
-<img width="1918" height="959" alt="Screenshot from 2026-06-09 00-09-58" src="https://github.com/user-attachments/assets/d0f36280-c38f-4613-88d2-715843f99afe" />
-<img width="1918" height="959" alt="Screenshot from 2026-06-09 00-10-05" src="https://github.com/user-attachments/assets/ad57847d-034f-477e-a6ed-375a65493fd8" />
-
+<div align="center">
+  <img width="1918" height="959" alt="Screenshot from 2026-06-09 00-09-50" src="https://github.com/user-attachments/assets/45ed36ba-9dd0-432f-9665-d616f52c3d1d" />
+  <img width="1918" height="959" alt="Screenshot from 2026-06-09 00-09-58" src="https://github.com/user-attachments/assets/d0f36280-c38f-4613-88d2-715843f99afe" />
+  <img width="1918" height="959" alt="Screenshot from 2026-06-09 00-10-05" src="https://github.com/user-attachments/assets/ad57847d-034f-477e-a6ed-375a65493fd8" />
+</div>
 ---
 
 ## Prérequis
