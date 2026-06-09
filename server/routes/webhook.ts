@@ -233,7 +233,7 @@ webhookRoutes.post('/webhook/connection_synced/', async (c) => {
                 }
 
                 await pool.execute(
-                    `INSERT INTO tx (tx_id, user_id, account_id, tx_date, tx_value, tx_type, original_wording)
+                    `INSERT IGNORE INTO tx (tx_id, user_id, account_id, tx_date, tx_value, tx_type, original_wording)
                     VALUES ${placeholders.join(',')}`,
                     values,
                 )
