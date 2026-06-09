@@ -150,10 +150,10 @@ export function DashboardPage() {
                     key={p.value}
                     type="button"
                     onClick={() => selectPeriod(p.value)}
-                    className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
+                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                       period === p.value
-                        ? 'bg-brand-700 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        ? 'bg-white/10 text-white'
+                        : 'text-gray-500 hover:text-gray-300'
                     }`}
                   >
                     {p.label}
@@ -168,33 +168,43 @@ export function DashboardPage() {
               <div className="h-80">
                 <ResponsiveContainer width="100%" height="100%">
                   <AreaChart data={chartData}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                    <XAxis dataKey="date" tick={{ fontSize: 12 }} />
-                    <YAxis tick={{ fontSize: 12 }} />
-                    <Tooltip />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#1e2433" />
+                    <XAxis dataKey="date" tick={{ fontSize: 11, fill: '#64748b' }} />
+                    <YAxis tick={{ fontSize: 11, fill: '#64748b' }} />
+                    <Tooltip
+                      contentStyle={{
+                        background: '#1a1f2b',
+                        border: '1px solid #2a3544',
+                        borderRadius: '12px',
+                        fontSize: '13px',
+                      }}
+                    />
                     <Legend />
                     <Area
                       type="monotone"
                       dataKey="stocks"
                       stackId="1"
-                      stroke="#7c3aed"
-                      fill="#c4b5fd"
+                      stroke="#38bdf8"
+                      fill="#38bdf8"
+                      fillOpacity={0.15}
                       name="Actions & fonds"
                     />
                     <Area
                       type="monotone"
                       dataKey="checking"
                       stackId="1"
-                      stroke="#6d28d9"
-                      fill="#a78bfa"
+                      stroke="#0ea5e9"
+                      fill="#0ea5e9"
+                      fillOpacity={0.12}
                       name="Comptes bancaires"
                     />
                     <Area
                       type="monotone"
                       dataKey="savings"
                       stackId="1"
-                      stroke="#5b21b6"
-                      fill="#8b5cf6"
+                      stroke="#6366f1"
+                      fill="#6366f1"
+                      fillOpacity={0.1}
                       name="Livrets"
                     />
                   </AreaChart>

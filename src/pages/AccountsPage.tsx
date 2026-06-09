@@ -81,7 +81,7 @@ export function AccountsPage() {
           ) : (
             <div className="overflow-x-auto">
               <table className="min-w-full text-left text-sm">
-                <thead className="border-b border-gray-100 text-xs uppercase tracking-wide text-gray-500">
+                <thead className="border-b border-white/5 text-xs uppercase tracking-wide text-gray-500">
                   <tr>
                     <th className="px-3 py-3 font-medium">Plateforme</th>
                     <th className="px-3 py-3 font-medium">Compte</th>
@@ -92,23 +92,23 @@ export function AccountsPage() {
                     <th className="px-3 py-3 font-medium">Mise à jour</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-50">
+                <tbody className="divide-y divide-white/5">
                   {accounts.map((account) => (
-                    <tr key={account.id} className="hover:bg-gray-50/80">
-                      <td className="px-3 py-3 font-medium text-gray-900">
+                    <tr key={account.id} className="hover:bg-white/5">
+                      <td className="px-3 py-3 font-medium text-gray-200">
                         {account.bank_original_name}
                       </td>
-                      <td className="px-3 py-3 text-gray-700">{account.original_name}</td>
+                      <td className="px-3 py-3 text-gray-400">{account.original_name}</td>
                       <td
                         className={`px-3 py-3 font-medium ${
-                          account.balance < 0 ? 'text-amber-600' : 'text-gray-900'
+                          account.balance < 0 ? 'text-amber-400' : 'text-gray-100'
                         }`}
                       >
                         {formatCurrency(account.balance, account.currency || 'EUR')}
                       </td>
-                      <td className="px-3 py-3 text-gray-600">{account.currency}</td>
-                      <td className="px-3 py-3 text-gray-600">{account.type}</td>
-                      <td className="px-3 py-3 font-mono text-xs text-gray-600">
+                      <td className="px-3 py-3 text-gray-500">{account.currency}</td>
+                      <td className="px-3 py-3 text-gray-500">{account.type}</td>
+                      <td className="px-3 py-3 font-mono text-xs text-gray-500">
                         {account.iban ? formatIban(account.iban) : '—'}
                       </td>
                       <td className="px-3 py-3 text-gray-500">

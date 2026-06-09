@@ -19,7 +19,7 @@ export function CategorySelect({
       value={value}
       disabled={disabled}
       onChange={(event) => onChange(event.target.value as ExpenseCategoryId)}
-      className="max-w-[11rem] rounded-xl border border-gray-200 bg-white px-2 py-1.5 text-sm text-gray-700 outline-none ring-brand-500 focus:ring-2 disabled:cursor-wait disabled:opacity-60"
+      className="max-w-[11rem] rounded-xl border border-white/10 bg-surface-hover px-2 py-1.5 text-sm text-gray-300 outline-none ring-brand-500 focus:ring-2 disabled:cursor-wait disabled:opacity-60"
       aria-label="Catégorie de la dépense"
     >
       <option value="" disabled>

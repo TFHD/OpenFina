@@ -75,7 +75,7 @@ export function InvestmentsPage() {
               <Card key={accountName} title={accountName}>
                 <div className="overflow-x-auto">
                   <table className="min-w-full text-left text-sm">
-                    <thead className="border-b border-gray-100 text-xs uppercase tracking-wide text-gray-500">
+                    <thead className="border-b border-white/5 text-xs uppercase tracking-wide text-gray-500">
                       <tr>
                         <th className="px-3 py-3 font-medium">Nom</th>
                         <th className="px-3 py-3 font-medium">Quantité</th>
@@ -84,20 +84,20 @@ export function InvestmentsPage() {
                         <th className="px-3 py-3 font-medium">Performance</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-50">
+                    <tbody className="divide-y divide-white/5">
                       {accountItems.map((item) => (
-                        <tr key={item.id} className="hover:bg-gray-50/80">
-                          <td className="px-3 py-3 font-medium text-gray-900">{item.label}</td>
-                          <td className="px-3 py-3 text-gray-600">{item.quantity}</td>
-                          <td className="px-3 py-3 text-gray-600">
+                        <tr key={item.id} className="hover:bg-white/5">
+                          <td className="px-3 py-3 font-medium text-gray-200">{item.label}</td>
+                          <td className="px-3 py-3 text-gray-500">{item.quantity}</td>
+                          <td className="px-3 py-3 text-gray-500">
                             {formatCurrency(item.unitvalue)}
                           </td>
-                          <td className="px-3 py-3 font-medium text-gray-900">
+                          <td className="px-3 py-3 font-medium text-gray-100">
                             {formatCurrency(item.valuation)}
                           </td>
                           <td
                             className={`px-3 py-3 font-medium ${
-                              item.diff_percent >= 0 ? 'text-emerald-600' : 'text-red-500'
+                              item.diff_percent >= 0 ? 'text-emerald-400' : 'text-red-400'
                             }`}
                           >
                             {formatPercent(item.diff_percent)}

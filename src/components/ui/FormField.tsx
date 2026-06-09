@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 const inputClass =
-  'w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm outline-none ring-brand-500 focus:ring-2'
+  'w-full rounded-xl border border-white/10 bg-surface-hover px-3 py-2.5 text-sm text-gray-100 outline-none ring-brand-500 focus:ring-2'
 
 function FormFieldShell({
   label,
@@ -12,7 +12,7 @@ function FormFieldShell({
 }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm font-medium text-gray-700">{label}</span>
+      <span className="mb-2 block text-sm font-medium text-gray-400">{label}</span>
       {children}
     </label>
   )

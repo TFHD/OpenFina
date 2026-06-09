@@ -59,11 +59,11 @@ export function LoansPage() {
                   onClick={() => setSelectedIndex(index)}
                   className={`w-full rounded-xl border px-4 py-3 text-left transition-colors ${
                     selectedIndex === index
-                      ? 'border-brand-200 bg-brand-50'
-                      : 'border-gray-100 hover:border-gray-200 hover:bg-gray-50'
+                      ? 'border-brand-500/40 bg-brand-50'
+                      : 'border-white/5 hover:border-white/10 hover:bg-white/5'
                   }`}
                 >
-                  <p className="font-medium text-gray-900">{loan.account_label || 'Crédit'}</p>
+                  <p className="font-medium text-gray-200">{loan.account_label || 'Crédit'}</p>
                   <p className="mt-1 text-sm text-gray-500">
                     {formatCurrency(loan.total_amount)} · {loan.type}
                   </p>
@@ -105,9 +105,9 @@ export function LoansPage() {
 
 function Detail({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-gray-50 pb-3">
+    <div className="flex items-center justify-between gap-4 border-b border-white/5 pb-3">
       <dt className="text-gray-500">{label}</dt>
-      <dd className="font-medium text-gray-900">{value}</dd>
+      <dd className="font-medium text-gray-200">{value}</dd>
     </div>
   )
 }

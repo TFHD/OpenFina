@@ -58,3 +58,42 @@ export function computeExpenseBreakdown(
 export function computeExpenseTotal(slices: ExpenseSlice[]): number {
     return slices.reduce((sum, slice) => sum + slice.amount, 0)
 }
+
+export function computeIncomeTotal(
+    transactions: Transaction[],
+    month: string,
+): number {
+    return transactions
+        .filter(
+            (tx) => tx.value > 0 && getTransactionMonth(tx.date) === month,
+        )
+        .reduce((sum, tx) => sum + tx.value, 0)
+}
+
+export function computeMonthExpenseTotal(
+    transactions: Transaction[],
+    month: string,
+): number {
+    return transactions
+        .filter(
+            (tx) => tx.value < 0 && getTransactionMonth(tx.date) === month,
+        )
+        .reduce((sum, tx) => sum + Math.abs(tx.value), 0)
+}
+
+export interface CashflowSummary {
+    income: number
+    expenses: number
+    available: number
+}
+
+export function computeCashflowSummary(
+    transactions: Transaction[],
+    month: string,
+): CashflowSummary {
+    const income = computeIncomeTotal(transactions, month)
+    const expenses = computeMonthExpenseTotal(transactions, month)
+    return { income, expenses, available: income - expenses }
+}
+
+export type { ExpenseSlice }

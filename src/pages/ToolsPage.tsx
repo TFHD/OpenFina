@@ -64,10 +64,10 @@ export function ToolsPage() {
             key={item.id}
             type="button"
             onClick={() => setTab(item.id)}
-            className={`rounded-xl px-4 py-2 text-sm font-medium transition-colors ${
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               tab === item.id
-                ? 'bg-brand-700 text-white'
-                : 'bg-white text-gray-600 ring-1 ring-gray-200 hover:bg-gray-50'
+                ? 'bg-white/10 text-white'
+                : 'text-gray-500 hover:bg-white/5 hover:text-gray-300'
             }`}
           >
             {item.label}
@@ -120,7 +120,7 @@ export function ToolsPage() {
             <>
               <p className="mb-4 text-sm text-gray-500">
                 Capital final :{' '}
-                <span className="font-semibold text-brand-700">
+                <span className="font-semibold text-brand-600">
                   {formatCurrency(simpleRows[simpleRows.length - 1]?.value ?? 0)}
                 </span>
               </p>
@@ -135,7 +135,7 @@ export function ToolsPage() {
             <>
               <p className="mb-4 text-sm text-gray-500">
                 Capital final :{' '}
-                <span className="font-semibold text-brand-700">
+                <span className="font-semibold text-brand-600">
                   {formatCurrency(compoundRows[compoundRows.length - 1]?.value ?? 0)}
                 </span>
               </p>
@@ -176,9 +176,9 @@ function ResultTable({
   rows: string[][]
 }) {
   return (
-    <div className="max-h-96 overflow-auto rounded-xl border border-gray-100">
+    <div className="max-h-96 overflow-auto rounded-xl border border-white/5">
       <table className="min-w-full text-left text-sm">
-        <thead className="sticky top-0 bg-gray-50 text-xs uppercase tracking-wide text-gray-500">
+        <thead className="sticky top-0 bg-surface-hover text-xs uppercase tracking-wide text-gray-500">
           <tr>
             {headers.map((header) => (
               <th key={header} className="px-3 py-2 font-medium">
@@ -187,11 +187,11 @@ function ResultTable({
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-50">
+        <tbody className="divide-y divide-white/5">
           {rows.map((row, index) => (
             <tr key={index}>
               {row.map((cell, cellIndex) => (
-                <td key={cellIndex} className="px-3 py-2 text-gray-700">
+                <td key={cellIndex} className="px-3 py-2 text-gray-400">
                   {cell}
                 </td>
               ))}
